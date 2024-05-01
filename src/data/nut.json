@@ -1,0 +1,275 @@
+[
+    {
+        "id": 1,
+        "name": "經典可可風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "可可粉",
+            "巧克力",
+            "糖",
+            "天然增稠劑"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#F7B26D",
+        "searchKey": [
+            "經典可可風味腰果",
+            "classic cocoa flavored cashews",
+            "chocolate"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "芥末風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "芥末粉",
+            "澱粉",
+            "鹽",
+            "糖",
+            "食用色素"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#c6f09d",
+        "searchKey": [
+            "芥末風味腰果",
+            "mustard flavored cashews"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "蜂蜜風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "蜂蜜",
+            "鹽",
+            "糖",
+            "玉米澱粉"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#fee1a4",
+        "searchKey": [
+            "蜂蜜風味腰果",
+            "honey flavored cashews"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "椰香風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "椰子粉",
+            "鹽",
+            "糖",
+            "天然增稠劑"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#f3f3f3",
+        "searchKey": [
+            "椰香風味腰果",
+            "coconut flavored cashews"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "卡布其諾風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "咖啡粉",
+            "鹽",
+            "糖",
+            "天然增稠劑"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#e6d19a",
+        "searchKey": [
+            "卡布其諾風味腰果",
+            "卡布奇諾風味腰果",
+            "cappuccino flavored cashew"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "泰式東央風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "Tomyum粉",
+            "鹽",
+            "糖",
+            "天然增稠劑"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#FF75B7",
+        "searchKey": [
+            "泰式東央風味腰果",
+            "thai eastern style cashew nuts",
+            "tom yam"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "蒜辣風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "大蒜",
+            "辣椒",
+            "鹽",
+            "糖",
+            "天然增稠劑"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#f69897",
+        "searchKey": [
+            "蒜辣風味腰果",
+            "garlic spicy cashew nuts"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "香濃起司風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "起司粉",
+            "鹽",
+            "糖",
+            "天然增稠劑"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#F8D17B",
+        "searchKey": [
+            "香濃起司風味腰果",
+            "fragrant cheese flavored cashew nuts"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "香檸風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "檸檬葉",
+            "鹽",
+            "糖",
+            "天然增稠劑",
+            "玉米澱粉"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#d8f3c0",
+        "searchKey": [
+            "香檸風味腰果",
+            "lemon flavored cashews"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "鹹蛋黃風味腰果",
+        "origin": "越南",
+        "ingredient": [
+            "腰果",
+            "鹹蛋粉",
+            "鹽",
+            "糖",
+            "天然增稠劑"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#ffc68e",
+        "searchKey": [
+            "鹹蛋黃風味腰果",
+            "salted egg yolk flavored cashew nuts"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "健康手工堅果塔",
+        "origin": "越南",
+        "ingredient": [
+            "南瓜子",
+            "杏仁",
+            "腰果",
+            "米餅",
+            "白芝麻",
+            "鹽",
+            "麥芽"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#E0FDFF",
+        "searchKey": [
+            "健康手工堅果塔",
+            "healthy handmade nut tart"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "健康海苔堅果餅",
+        "origin": "越南",
+        "ingredient": [
+            "南瓜子",
+            "杏仁",
+            "腰果",
+            "糙米",
+            "海苔",
+            "蜂蜜"
+        ],
+        "weight": "50g",
+        "specifications": "隨手包",
+        "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
+        "expiryDate": "6個月",
+        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "color": "#E0FDFF",
+        "searchKey": [
+            "健康海苔堅果餅",
+            "healthy seaweed nut cake"
+        ]
+    }
+]

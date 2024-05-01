@@ -1,9 +1,18 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+  import EnterWebTitle from '@/components/EnterWebTitle.vue';
+  import Nav from '@/components/Nav.vue';
+  import IntroduceProduct from '@/components/IntroduceProduct.vue';
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="main">
+    <Nav />
+    <EnterWebTitle />
+    <IntroduceProduct />
+    <div style="width: 100vw; height: 0.5vh;"></div>
+  </div>
 </template>
+
+<style scoped>
+
+</style>
