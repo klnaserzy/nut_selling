@@ -35,7 +35,7 @@
 <template>
     <div class="nav-bar">
         <div class="home-nav-link">
-            <RouterLink to="/">natural</RouterLink>
+            <RouterLink to="/sell">natural</RouterLink>
         </div>
         <div class="other-nav-links">
         </div>

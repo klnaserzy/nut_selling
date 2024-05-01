@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
 </script>
 
 <template>
