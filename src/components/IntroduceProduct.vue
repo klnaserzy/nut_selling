@@ -7,11 +7,11 @@
     const searchInput = ref("");
 
     const searchNutData = computed(() => {
-        return nutData.filter(data => 
-            data.searchKey.filter(searchKeyData => 
-                searchKeyData.includes(searchInput.value)
-            )
-        )
+        return nutData.filter(data => {
+            let checkIncludes = false;
+            return data.searchKey.some(searchKeyData => checkIncludes = searchKeyData.includes(searchInput.value.toLowerCase()))
+            
+        })
     });
 </script>
 
@@ -21,7 +21,7 @@
             <label for="inputSearch">🔍搜尋: </label>
             <input id="inputSearch" v-model="searchInput" type="text" placeholder="堅果塔"/>
         </div>
-        <RouterLink to="/sell" v-for="nut in searchNutData" :key="nut.id" class="product"  :style="{ backgroundColor: nut.color}">
+        <RouterLink to="/sell" v-if="searchNutData.length > 0" v-for="nut in searchNutData" :key="nut.id" class="product"  :style="{ backgroundColor: nut.color}">
             <img :src="nutImg" :alt="`${nut.name} product`">
             <div class="describe">
                 <p class="name">{{ nut.name }}</p>
@@ -38,6 +38,7 @@
                 <p class="expiryDate">有效期限: {{ nut.expiryDate }}</p>
             </div>
         </RouterLink>
+        <div v-else style="height: 80vh">好像沒有你要的東西喔(*´･д･)?</div>
     </div>
 </template>
 
@@ -86,8 +87,13 @@
         word-wrap: break-word;
     }
 
+    .describe .name {
+        font-weight: 400;
+        font-size: 28px;
+    }
+
     .describe p {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         font-weight: 600;
         font-size: 18px;
     }
@@ -100,7 +106,7 @@
         font-size: 16px;
         border-radius: 2rem;
         height: 28px;
-        padding: 5px;
+        padding: 0 10px;
         border: 1px solid #ffffff;
         outline: 1px solid rgba(170, 50, 220, .6);
     }
