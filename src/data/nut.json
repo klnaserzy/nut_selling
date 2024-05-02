@@ -14,7 +14,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#F7B26D",
         "searchKey": [
             "經典可可風味腰果",
@@ -38,7 +38,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#c6f09d",
         "searchKey": [
             "芥末風味腰果",
@@ -60,7 +60,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#fee1a4",
         "searchKey": [
             "蜂蜜風味腰果",
@@ -82,7 +82,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#f3f3f3",
         "searchKey": [
             "椰香風味腰果",
@@ -104,7 +104,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#e6d19a",
         "searchKey": [
             "卡布其諾風味腰果",
@@ -127,7 +127,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#FF75B7",
         "searchKey": [
             "泰式東央風味腰果",
@@ -151,7 +151,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#f69897",
         "searchKey": [
             "蒜辣風味腰果",
@@ -173,7 +173,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#F8D17B",
         "searchKey": [
             "香濃起司風味腰果",
@@ -196,7 +196,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#d8f3c0",
         "searchKey": [
             "香檸風味腰果",
@@ -218,7 +218,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#ffc68e",
         "searchKey": [
             "鹹蛋黃風味腰果",
@@ -242,7 +242,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#E0FDFF",
         "searchKey": [
             "健康手工堅果塔",
@@ -265,7 +265,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "src/assets/a_bag_of_handy_bag.jpg",
+        "img": "@/assets/a_bag_of_handy_bag.jpg",
         "color": "#E0FDFF",
         "searchKey": [
             "健康海苔堅果餅",

@@ -2,6 +2,7 @@
     import nutData from "@/data/nut.json"
     import { ref, computed } from "vue";
     import { RouterLink } from "vue-router";
+    import nutImg from '@/assets/a_bag_of_handy_bag.jpg';
 
     const searchInput = ref("");
 
@@ -21,7 +22,7 @@
             <input id="inputSearch" v-model="searchInput" type="text" placeholder="堅果塔"/>
         </div>
         <RouterLink to="/sell" v-for="nut in searchNutData" :key="nut.id" class="product"  :style="{ backgroundColor: nut.color}">
-            <img :src="nut.img" :alt="`${nut.name} product`">
+            <img :src="nutImg" :alt="`${nut.name} product`">
             <div class="describe">
                 <p class="name">{{ nut.name }}</p>
                 <p class="origin">產地: {{ nut.origin }}</p>
