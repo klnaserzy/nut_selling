@@ -19,7 +19,10 @@
         "searchKey": [
             "經典可可風味腰果",
             "classic cocoa flavored cashews",
-            "chocolate"
+            "可可",
+            "cocoa",
+            "經典巧克力風味腰果",
+            "經典可可風味"
         ]
     },
     {
@@ -42,7 +45,12 @@
         "color": "#c6f09d",
         "searchKey": [
             "芥末風味腰果",
-            "mustard flavored cashews"
+            "mustard flavored cashews",
+            "芥末",
+            "mustard",
+            "芥末腰果",
+            "芥末味",
+            "哇撒米"
         ]
     },
     {
@@ -64,7 +72,12 @@
         "color": "#fee1a4",
         "searchKey": [
             "蜂蜜風味腰果",
-            "honey flavored cashews"
+            "honey flavored cashews",
+            "蜂蜜",
+            "honey",
+            "蜜糖風味腰果",
+            "甜味",
+            "sweet"
         ]
     },
     {
@@ -86,7 +99,12 @@
         "color": "#f3f3f3",
         "searchKey": [
             "椰香風味腰果",
-            "coconut flavored cashews"
+            "coconut flavored cashews",
+            "椰子",
+            "coconut",
+            "椰奶風味腰果",
+            "椰子味",
+            "coconutty"
         ]
     },
     {
@@ -108,8 +126,11 @@
         "color": "#e6d19a",
         "searchKey": [
             "卡布其諾風味腰果",
-            "卡布奇諾風味腰果",
-            "cappuccino flavored cashew"
+            "cappuccino flavored cashew nuts",
+            "卡布奇諾",
+            "cappuccino",
+            "咖啡風味腰果",
+            "咖啡"
         ]
     },
     {
@@ -132,7 +153,11 @@
         "searchKey": [
             "泰式東央風味腰果",
             "thai eastern style cashew nuts",
-            "tom yam"
+            "東央",
+            "tom yam",
+            "泰式風味腰果",
+            "酸辣",
+            "sour and spicy"
         ]
     },
     {
@@ -155,7 +180,12 @@
         "color": "#f69897",
         "searchKey": [
             "蒜辣風味腰果",
-            "garlic spicy cashew nuts"
+            "garlic spicy cashew nuts",
+            "蒜辣",
+            "garlic spicy",
+            "辣味腰果",
+            "辣椒",
+            "chili"
         ]
     },
     {
@@ -177,7 +207,12 @@
         "color": "#F8D17B",
         "searchKey": [
             "香濃起司風味腰果",
-            "fragrant cheese flavored cashew nuts"
+            "fragrant cheese flavored cashew nuts",
+            "起司",
+            "cheese",
+            "起司味腰果",
+            "芝士",
+            "cheddar"
         ]
     },
     {
@@ -200,7 +235,12 @@
         "color": "#d8f3c0",
         "searchKey": [
             "香檸風味腰果",
-            "lemon flavored cashews"
+            "lemon flavored cashews",
+            "檸檬",
+            "lemon",
+            "檸檬味腰果",
+            "酸味",
+            "sour"
         ]
     },
     {
@@ -222,7 +262,14 @@
         "color": "#ffc68e",
         "searchKey": [
             "鹹蛋黃風味腰果",
-            "salted egg yolk flavored cashew nuts"
+            "salted egg yolk flavored cashew nuts",
+            "鹹蛋黃",
+            "salted egg yolk",
+            "鹹蛋風味腰果",
+            "鹹",
+            "salty",
+            "鹹鴨蛋",
+            "salted duck egg"
         ]
     },
     {
@@ -246,7 +293,10 @@
         "color": "#E0FDFF",
         "searchKey": [
             "健康手工堅果塔",
-            "healthy handmade nut tart"
+            "healthy handmade nut tart",
+            "手工",
+            "handmade",
+            "健康堅果塔"
         ]
     },
     {
@@ -269,7 +319,10 @@
         "color": "#E0FDFF",
         "searchKey": [
             "健康海苔堅果餅",
-            "healthy seaweed nut cake"
+            "healthy seaweed nut cake",
+            "海苔",
+            "seaweed",
+            "健康堅果餅"
         ]
     }
 ]

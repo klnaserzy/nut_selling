@@ -7,12 +7,11 @@
     const searchInput = ref("");
 
     const searchNutData = computed(() => {
-        return nutData.filter(data => 
-            data.searchKey.filter(searchKeyData => {
-                console.log(searchKeyData);
-                return searchKeyData.includes(searchInput.value)
-            })
-        )
+        return nutData.filter(data => {
+            let checkIncludes = false;
+            return data.searchKey.some(searchKeyData => checkIncludes = searchKeyData.includes(searchInput.value.toLowerCase()))
+            
+        })
     });
 </script>
 
