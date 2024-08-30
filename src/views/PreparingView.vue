@@ -3,11 +3,11 @@
 </script>
 
 <template>
-    <h1>Σ(ﾟДﾟ；≡；ﾟдﾟ) 非常抱歉 這裡還沒有完成施工</h1>
+    <h1>Σ(ﾟДﾟ；≡；ﾟдﾟ) 這裡還沒有完成施工</h1>
 </template>
 
-<style>
+<style scoped>
     h1 {
-        margin-left: 50px;
+        margin: 80px;
     }
 </style>

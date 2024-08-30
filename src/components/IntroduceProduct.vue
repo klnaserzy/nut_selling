@@ -19,7 +19,7 @@
     <div class="container">
         <div class="search">
             <label for="inputSearch">🔍搜尋: </label>
-            <input id="inputSearch" v-model="searchInput" type="text" placeholder="堅果塔"/>
+            <input id="inputSearch" v-model.trim="searchInput" type="text" placeholder="堅果塔"/>
         </div>
         <RouterLink to="/sell" v-if="searchNutData.length > 0" v-for="nut in searchNutData" :key="nut.id" class="product"  :style="{ backgroundColor: nut.color}">
             <img :src="nutImg" :alt="`${nut.name} product`">
