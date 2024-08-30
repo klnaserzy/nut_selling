@@ -1,41 +1,28 @@
 <script setup>
     import { RouterLink } from 'vue-router';
-    import { onMounted } from 'vue';
+    import { onMounted, ref, watch, onBeforeUnmount } from 'vue';
 
-    
-    onMounted(() => {
-        const imgHeight = 400 + (30 * window.innerWidth * 0.01 * 0.5) - 30;
-        const scrollItem = document.querySelector(".nav-bar a");
+    const imgHeight = 550;
 
-        if(window.innerWidth > 1024){
-
-            scrollItem.addEventListener('mouseover', () => {
-                scrollItem.style.color = 'black';
-            });
-
-            window.addEventListener("scroll", () => {
-                if(window.scrollY > imgHeight){
-                    scrollItem.style.color = "black";
-
-                    scrollItem.addEventListener('mouseout', () => {
-                        if(window.scrollY < imgHeight){
-                            scrollItem.style.color = '#b1ff64';
-                        }
-                    });
-                } else {
-                    scrollItem.style.color = "#b1ff64";
-                }
-            });
-
-        }
+    window.addEventListener('scroll', () => {
     });
+
+    const fontColorBlack = (event) => {
+        event.target.style.color = "black";
+    }
+    
+    const fontColorGreen = (event) => {
+        if(window.innerWidth < 1024) return;
+        if(window.scrollY > imgHeight) return;
+        event.target.style.color = "#b1ff64";
+    }
 
 </script>
 
 <template>
     <div class="nav-bar">
         <div class="home-nav-link">
-            <RouterLink to="/sell">natural</RouterLink>
+            <RouterLink class="nav-link" @mouseover="fontColorBlack" @mouseout="fontColorGreen" to="/sell">Natural</RouterLink>
         </div>
         <div class="other-nav-links">
         </div>
@@ -47,12 +34,11 @@
         background-color: transparent;
         position: fixed;
         top: 10px;
-        width: 100vw;
-        height: 50px;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 999;
     }
 
     .home-nav-link {        
@@ -66,7 +52,7 @@
         align-items: center;
     }
 
-    .nav-bar a {
+    .nav-link {
         padding: 0 20px;
         height: 100%;
         width: 100%;
@@ -74,7 +60,7 @@
         text-decoration: none;
         color: #b1ff64;
         border: 1px solid #b1ff64;
-        border-radius: 100px;
+        border-radius: 9999px;
         line-height: 1.8em;
         background-color: transparent;
         font-weight: 600;
@@ -83,7 +69,12 @@
         transition: color .5s ease-in-out;
     }
 
-    .nav-bar a::before {
+    
+    .nav-link:hover {
+        color: black;
+    }
+
+    .nav-link::before {
         content: "";
         width: 100%;
         height: 100%;
@@ -94,11 +85,36 @@
         transition: transform .5s ease-in-out
     }
 
-    .nav-bar a:hover::before {
+    .nav-link:hover::before {
         transform: translateX(100%);
     }
 
-    .nav-bar a:active {
+    .nav-link:active {
         color: green;
+    }
+
+    .toSell {
+        
+    }
+
+    @media (max-width: 1024px) {
+        .nav-link {
+            color: black;
+            border: 1px solid #b1ff6488;
+        }
+
+        .nav-link::before {
+            width: 200%;
+        }
+
+        .nav-link:hover::before {
+            transform: translateX(0);
+        }
+    }
+
+    @media (max-width: 340px) {
+        .nav-link {
+            font-size: 1.2rem; 
+        }
     }
 </style>

@@ -22,14 +22,22 @@
 </template>
 
 <style scoped>
+  .container::before {
+    content: "";
+    width: 100vw;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    overflow: hidden;
+  }
 
   .container {
     background-image: url("../assets/product_display.jpg");
     width: 100vw;
-    height: calc(350px + (30vw * 0.5));
+    height: 550px;
     background-size: cover;
-    background-position:  50% 100%;
-
+    background-position:  50%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +50,7 @@
     margin-top: 9vw;
     margin-left: 100px;
     color: transparent;
-    font-size:72px;
+    font-size:84px;
     letter-spacing: 2px;
     line-height: 1.2em;
     background-color: transparent;
@@ -58,4 +66,22 @@
     transition: 1s ease-in-out;
   }
 
+  
+  @media (max-width: 1024px) {
+  }
+  
+  @media (max-width: 720px) {
+    .container h1 {
+      font-size: 64px;
+    }
+  }
+  
+  @media (max-width: 330px) {
+    .container h1 {
+      font-size: 48px;
+    }
+    .container p {
+      font-size: 16px;
+    }
+  }
 </style>

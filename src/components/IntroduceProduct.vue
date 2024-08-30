@@ -38,7 +38,7 @@
                 <p class="expiryDate">有效期限: {{ nut.expiryDate }}</p>
             </div>
         </RouterLink>
-        <div v-else style="height: 80vh">好像沒有你要的東西喔(*´･д･)?</div>
+        <div v-else class="searchFailed">好像沒有你要的東西喔(*´･д･)?</div>
     </div>
 </template>
 
@@ -46,6 +46,7 @@
     .container {
         width: 900px;
         margin: 30px auto;
+        position: relative;
     }
 
     .search {
@@ -62,12 +63,17 @@
         text-decoration: none;
         cursor: default;
         color: black;
+        box-shadow: 0 0 5px 3px rgb(155, 155, 155);
 
         display: flex;
+
+        transition:  .2s ease-in-out;
     }
 
     .product:hover {
         cursor: pointer;
+        box-shadow: 7px 7px 12px 8px rgb(155, 155, 155);
+        transform: translate(-7px, -7px);
     }
 
     .product:active {
@@ -77,7 +83,6 @@
     .product img {
         margin-left: 20px;
         width: 200px;
-        height: auto;
         border-radius: 20px;
         object-fit: cover;
     }
@@ -89,13 +94,13 @@
 
     .describe .name {
         font-weight: 400;
-        font-size: 28px;
+        font-size: 1.8em;
     }
 
     .describe p {
         margin-bottom: 10px;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 1.2em;
     }
 
     .ingredients span {
@@ -103,7 +108,7 @@
     }
 
     #inputSearch {
-        font-size: 16px;
+        font-size: 1.1em;
         border-radius: 2rem;
         height: 28px;
         padding: 0 10px;
@@ -115,4 +120,71 @@
         border: 1px solid #5053f8
     }
 
+    .searchFailed {
+        height: 80vh;
+    }
+
+    @media (max-width: 1024px) {
+        .container {
+            width: 600px;
+            font-size: 0.7em;
+        }
+        
+        .product img {
+            width: 160px;
+        }
+    }
+    
+    @media (max-width: 720px) {
+        .container {
+            width: 100vw;
+        }
+
+        .product {
+            box-shadow: none;
+            padding: 10px 20px;
+            border-radius: 0px;
+            margin: 0;
+        }
+
+        .product:nth-child(2) {
+            margin-top: 10px;
+        }
+
+        .product:hover {
+            transform: translate(0);
+            box-shadow: none;
+        }
+
+        .container {
+            margin-top: -40px;
+        }
+
+        .search {
+            margin-right: 10px;
+            color: white;
+        }
+
+        .searchFailed {
+            margin: 40px 0 0 10px;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .product {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product {
+            img { 
+                width: auto;
+                margin: 0;
+            }
+            
+            .describe {
+                margin: 0;
+            }
+        }
+    }
 </style>
