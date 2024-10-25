@@ -32,7 +32,7 @@
   }
 
   .container {
-    background-image: url("../assets/product_display.jpg");
+    background-image: url("../assets/images/product_display.jpg");
     width: 100vw;
     height: 550px;
     background-size: cover;

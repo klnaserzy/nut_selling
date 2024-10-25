@@ -2,14 +2,13 @@
     import nutData from "@/data/nut.json"
     import { ref, computed } from "vue";
     import { RouterLink } from "vue-router";
-    import nutImg from '@/assets/a_bag_of_handy_bag.jpg';
+    import nutImg from '@/assets/images/a_bag_of_handy_bag.jpg';
 
     const searchInput = ref("");
 
     const searchNutData = computed(() => {
         return nutData.filter(data => {
-            let checkIncludes = false;
-            return data.searchKey.some(searchKeyData => checkIncludes = searchKeyData.includes(searchInput.value.toLowerCase()))
+            return data.searchKey.some(searchKeyData => searchKeyData.includes(searchInput.value.toLowerCase()))
             
         })
     });
@@ -21,13 +20,13 @@
             <label for="inputSearch">🔍搜尋: </label>
             <input id="inputSearch" v-model.trim="searchInput" type="text" placeholder="堅果塔"/>
         </div>
-        <RouterLink to="/sell" v-if="searchNutData.length > 0" v-for="nut in searchNutData" :key="nut.id" class="product"  :style="{ backgroundColor: nut.color}">
+        <RouterLink to="/sell" v-for="nut in searchNutData" :key="nut.id" class="product"  :style="{ backgroundColor: nut.color}">
             <img :src="nutImg" :alt="`${nut.name} product`">
             <div class="describe">
                 <p class="name">{{ nut.name }}</p>
                 <p class="origin">產地: {{ nut.origin }}</p>
                 <p class="ingredients">成分: 
-                    <span v-for="(ingredient, index) in nut.ingredient">
+                    <span v-for="(ingredient, index) in nut.ingredient" :key="index">
                         {{ ingredient }}
                         {{ index === nut.ingredient.length - 1 ? '' : '、' }}
                     </span>
@@ -38,7 +37,7 @@
                 <p class="expiryDate">有效期限: {{ nut.expiryDate }}</p>
             </div>
         </RouterLink>
-        <div v-else class="searchFailed">好像沒有你要的東西喔(*´･д･)?</div>
+        <div v-if="searchNutData.length === 0" class="searchFailed">好像沒有你要的東西喔(*´･д･)?</div>
     </div>
 </template>
 
@@ -176,15 +175,12 @@
             flex-direction: column;
         }
 
-        .product {
-            img { 
-                width: auto;
-                margin: 0;
-            }
-            
-            .describe {
-                margin: 0;
-            }
+        .product img{
+            width: auto;
+            margin: 0;
+        }
+        .product  .describe {
+            margin: 0;
         }
     }
 </style>
