@@ -1,5 +1,4 @@
 <script setup>
-    import { RouterLink } from 'vue-router';
 
 </script>
 
@@ -30,7 +29,7 @@
         background-color: transparent;
         position: sticky;
         top: 0px;
-        height: 70px;
+        height: 60px;
         background-color: #f1f1f1;
         display: flex;
         justify-content: space-between;

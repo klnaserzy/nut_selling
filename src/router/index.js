@@ -14,7 +14,7 @@ const router = createRouter({
     {
       path: '/sell',
       name: "sell",
-      component: PreparingView  // temporary
+      component: SellView
     }
   ]
 })
