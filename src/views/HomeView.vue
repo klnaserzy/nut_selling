@@ -1,5 +1,5 @@
 <script setup>
-	import EnterWebTitleNew from '@/components/EnterWebTitleNew.vue';
+	import EnterWebTitle from '@/components/EnterWebTitle.vue';
 	import Nav from '@/components/Nav.vue';
 	import IntroductionProduct from '@/components/IntroductionProduct.vue';
 </script>
@@ -7,9 +7,8 @@
 <template>
 	<div class="main">
 		<Nav />
-		<EnterWebTitleNew />
+		<EnterWebTitle />
 		<IntroductionProduct />
-		<footer style="width: 100vw; height: 0.5vh;"></footer>
 	</div>
 </template>
 
