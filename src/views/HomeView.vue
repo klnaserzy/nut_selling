@@ -1,16 +1,16 @@
 <script setup>
-  import EnterWebTitle from '@/components/EnterWebTitle.vue';
-  import Nav from '@/components/Nav.vue';
-  import IntroduceProduct from '@/components/IntroduceProduct.vue';
+	import EnterWebTitleNew from '@/components/EnterWebTitleNew.vue';
+	import Nav from '@/components/Nav.vue';
+	import IntroductionProduct from '@/components/IntroductionProduct.vue';
 </script>
 
 <template>
-  <div class="main">
-    <Nav />
-    <EnterWebTitle />
-    <IntroduceProduct />
-    <footer style="width: 100vw; height: 0.5vh;"></footer>
-  </div>
+	<div class="main">
+		<Nav />
+		<EnterWebTitleNew />
+		<IntroductionProduct />
+		<footer style="width: 100vw; height: 0.5vh;"></footer>
+	</div>
 </template>
 
 <style scoped>

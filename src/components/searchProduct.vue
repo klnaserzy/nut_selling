@@ -8,8 +8,9 @@
 
     const searchNutData = computed(() => {
         return nutData.filter(data => {
-            return data.searchKey.some(searchKeyData => searchKeyData.includes(searchInput.value.toLowerCase()))
-            
+            return data.searchKey.some(searchKeyData => 
+                searchKeyData.includes(searchInput.value.toLowerCase())
+            )
         })
     });
 </script>

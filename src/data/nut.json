@@ -14,7 +14,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#F7B26D",
         "searchKey": [
             "經典可可風味腰果",
@@ -23,7 +23,8 @@
             "cocoa",
             "經典巧克力風味腰果",
             "經典可可風味"
-        ]
+        ],
+        "introduction" : "以濃郁的可可粉包裹每一顆酥脆的腰果，甜中帶苦的滋味完美平衡，讓人忍不住一口接一口，是喜愛巧克力愛好者的首選。"
     },
     {
         "id": 2,
@@ -41,7 +42,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#c6f09d",
         "searchKey": [
             "芥末風味腰果",
@@ -51,7 +52,8 @@
             "芥末腰果",
             "芥末味",
             "哇撒米"
-        ]
+        ],
+        "introduction" : "這款腰果以微辣的芥末調味，帶來清新的辛香氣息。辣勁與腰果的脆爽口感結合，是提神醒腦的好夥伴。"
     },
     {
         "id": 3,
@@ -68,7 +70,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#fee1a4",
         "searchKey": [
             "蜂蜜風味腰果",
@@ -78,7 +80,8 @@
             "蜜糖風味腰果",
             "甜味",
             "sweet"
-        ]
+        ],
+        "introduction" : "蜂蜜與腰果的甜蜜組合，天然的蜂蜜香氣中和了腰果的酥脆，帶來自然的甜味與美味，是小孩和大人都愛的零食。"
     },
     {
         "id": 4,
@@ -95,7 +98,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#f3f3f3",
         "searchKey": [
             "椰香風味腰果",
@@ -105,7 +108,8 @@
             "椰奶風味腰果",
             "椰子味",
             "coconutty"
-        ]
+        ],
+        "introduction" : "融合了椰子的香氣，帶有熱帶風情的椰香味道撲鼻而來。清爽又帶有自然甜味，彷彿置身於椰林之中。"
     },
     {
         "id": 5,
@@ -122,7 +126,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#e6d19a",
         "searchKey": [
             "卡布其諾風味腰果",
@@ -131,7 +135,8 @@
             "cappuccino",
             "咖啡風味腰果",
             "咖啡"
-        ]
+        ],
+        "introduction" : "以咖啡和奶香為基底的卡布奇諾風味腰果，帶有濃郁的咖啡香氣，讓你每一口都能享受到下午茶的愉悅滋味。"
     },
     {
         "id": 6,
@@ -148,7 +153,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#FF75B7",
         "searchKey": [
             "泰式東央風味腰果",
@@ -158,7 +163,8 @@
             "泰式風味腰果",
             "酸辣",
             "sour and spicy"
-        ]
+        ],
+        "introduction" : "將泰式酸辣的東央湯風味融入腰果中，微酸微辣、香料濃郁的風味讓人不禁聯想到熱情的泰國美食。"
     },
     {
         "id": 7,
@@ -176,7 +182,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#f69897",
         "searchKey": [
             "蒜辣風味腰果",
@@ -186,7 +192,8 @@
             "辣味腰果",
             "辣椒",
             "chili"
-        ]
+        ],
+        "introduction" : "蒜香與辣味的經典組合，濃郁的蒜香撲鼻而來，再配上微辣的口感，適合重口味的零食愛好者。"
     },
     {
         "id": 8,
@@ -203,7 +210,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#F8D17B",
         "searchKey": [
             "香濃起司風味腰果",
@@ -213,7 +220,8 @@
             "起司味腰果",
             "芝士",
             "cheddar"
-        ]
+        ],
+        "introduction" : "用香濃的起司調味，每一顆腰果都包裹著濃郁的奶香味，讓喜愛起司的人無法抗拒，是下酒的小點心。"
     },
     {
         "id": 9,
@@ -231,7 +239,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#d8f3c0",
         "searchKey": [
             "香檸風味腰果",
@@ -241,7 +249,8 @@
             "檸檬味腰果",
             "酸味",
             "sour"
-        ]
+        ],
+        "introduction" : "以清爽的檸檬風味調製，酸酸甜甜的口感帶來一種清新感，適合在炎熱的天氣中享用。"
     },
     {
         "id": 10,
@@ -258,7 +267,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#ffc68e",
         "searchKey": [
             "鹹蛋黃風味腰果",
@@ -270,7 +279,8 @@
             "salty",
             "鹹鴨蛋",
             "salted duck egg"
-        ]
+        ],
+        "introduction" : "鹹香的蛋黃粉裹覆腰果，每一口都是濃厚的鹹蛋黃風味，讓人欲罷不能。特別適合愛鹹食的小吃愛好者。"
     },
     {
         "id": 11,
@@ -289,7 +299,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#E0FDFF",
         "searchKey": [
             "健康手工堅果塔",
@@ -297,7 +307,8 @@
             "手工",
             "handmade",
             "健康堅果塔"
-        ]
+        ],
+        "introduction" : "這款堅果塔以多種健康堅果製作而成，手工烘焙，無添加過多糖分和人工香料，適合注重健康的您。每一口都能享受到堅果的自然甘甜與酥脆。"
     },
     {
         "id": 12,
@@ -315,7 +326,7 @@
         "specifications": "隨手包",
         "allergy": "本產品含堅果牛奶蛋麩質之穀物不適合對其過敏者食用",
         "expiryDate": "6個月",
-        "img": "@/assets/a_bag_of_handy_bag.jpg",
+        "img": "src/assets/images/a_bag_of_handy_bag.jpg",
         "color": "#E0FDFF",
         "searchKey": [
             "健康海苔堅果餅",
@@ -323,6 +334,7 @@
             "海苔",
             "seaweed",
             "健康堅果餅"
-        ]
+        ],
+        "introduction" : "健康海苔搭配堅果製成的餅乾，鹹香可口，脆度十足。無論是早餐、下午茶，還是隨時隨地的健康小點心，都是不錯的選擇。"
     }
 ]
