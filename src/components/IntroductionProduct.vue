@@ -39,7 +39,7 @@
         <div class="wrapper" v-for="(nuts, index) in nutsData" :key="index" ref="products">
             <div class="intro-text">
                 <h2>{{ nuts.name }}</h2>
-                <p>{{ nuts.introduction }}</p>
+                <p>{{ nuts.introduction.long }}</p>
             </div>
             <img class="intro-img" :src="nuts.img" :alt="nuts.name + '圖片'">
         </div>
@@ -97,6 +97,7 @@
         padding-right: 30px;
         margin-right: 50px;
         border-right: 1px solid black;
+        object-fit: cover;
     }
 
 </style>

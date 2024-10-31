@@ -1,5 +1,4 @@
 <script setup>
-    import { onMounted } from 'vue';
 
 
 
@@ -8,20 +7,20 @@
 <template>
     <div class="hero-section">
         <div class="grid">
-            <img class="product animation-delay1 fade-in" src="@/assets/images/a_bag_of_handy_bag.jpg">
-            <img class="product animation-delay2 fade-in" src="@/assets/images/product_display.jpg">
-            <img class="product animation-delay3 fade-in" src="@/assets/images/promotional_picture.jpg">
-            <img class="product animation-delay1 fade-in" src="@/assets/images/堅果_八包.png">
-            <img class="product animation-delay2 fade-in" src="@/assets/images/堅果_袋裝_五包入_四袋_裁切.png">
+            <img class="product animation-delay1 fade-in" src="@/assets/images/peanut-coffee-peanut-glutinous-rice-peanuts-53591.jpeg">
+            <img class="product animation-delay2 fade-in" src="@/assets/images/pexels-photo-114121.jpeg">
+            <img class="product animation-delay3 fade-in" src="@/assets/images/pexels-photo-372842.jpeg">
+            <img class="product animation-delay1 fade-in" src="@/assets/images/pexels-photo-1295572.jpeg">
+            <img class="product animation-delay2 fade-in" src="@/assets/images/pexels-photo-2161650.jpeg">
             <div id="intro" class="fade-in">
                 <h1>自然健康的美味，源自每一顆堅果</h1>
                 <p>每一顆都是自然的結晶，為健康生活加分，甄選天然來源，給每一口健康保障，精心挑選，呈現您值得信賴的堅果好味道。</p>
             </div>
-            <img class="product animation-delay3 fade-in" src="@/assets/images/堅果_袋裝_五包入_四袋.png">
-            <img class="product animation-delay1 fade-in" src="@/assets/images/堅果_袋裝_五包入.png">
-            <img class="product animation-delay2 fade-in" src="@/assets/images/堅果塔與海苔堅果餅.jpg">
-            <img class="product animation-delay3 fade-in" src="@/assets/images/正面標籤.jpg">
-            <img class="product animation-delay1 fade-in" src="@/assets/images/送禮用10種口味.jpg">
+            <img class="product animation-delay3 fade-in" src="@/assets/images/pexels-photo-3969097.webp">
+            <img class="product animation-delay1 fade-in" src="@/assets/images/pexels-photo-4110186.jpeg">
+            <img class="product animation-delay2 fade-in" src="@/assets/images/pexels-photo-7262748.webp">
+            <img class="product animation-delay3 fade-in" src="@/assets/images/pexels-photo-7262769.webp">
+            <img class="product animation-delay1 fade-in" src="@/assets/images/pexels-photo-7717478.jpeg">
         </div>
     </div>
 </template>
