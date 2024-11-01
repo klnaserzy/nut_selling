@@ -1,6 +1,6 @@
 <script setup>
     import Nav from '@/components/Nav.vue';
-    import nutsData from '@/data/nut.json'
+    import nutsData from '@/utils/nut.js'
 
 </script>
 

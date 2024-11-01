@@ -1,6 +1,6 @@
 <script setup>
     import { onMounted, onBeforeUnmount, ref } from 'vue';
-    import nutsData from '@/data/nut.json';
+    import nutsData from '@/utils/nut.js';
 
     const products = ref([]);  // 存儲每個產品元素的 refs
     let observer;
