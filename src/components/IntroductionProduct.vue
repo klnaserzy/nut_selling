@@ -90,6 +90,7 @@
         padding-left: 30px;
         margin-left: 50px;
         border-left: 1px solid black;
+        object-fit: cover;
     }
     
     .wrapper:nth-child(even) .intro-img {

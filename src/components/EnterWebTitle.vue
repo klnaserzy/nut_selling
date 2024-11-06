@@ -41,7 +41,7 @@
     .product {
         width: 100%;
         height: 35vh;
-        object-fit:cover;
+        object-fit: cover;
     }
 
     .animation-delay1 {

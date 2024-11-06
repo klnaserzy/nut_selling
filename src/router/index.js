@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import SellView from '@/views/SellView.vue'
+import OrderConfirmationView from '@/views/OrderConfirmationView.vue'
 import PreparingView from '@/views/PreparingView.vue'
 
 const router = createRouter({
@@ -15,6 +16,11 @@ const router = createRouter({
       path: '/sell',
       name: "sell",
       component: SellView
+    },
+    {
+      path: '/orderConfirmation',
+      name: 'OrderConfirmation',
+      component: OrderConfirmationView
     }
   ]
 })
