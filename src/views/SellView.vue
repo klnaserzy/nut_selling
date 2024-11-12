@@ -4,25 +4,30 @@
     import Nav from '@/components/Nav.vue';
     import nutsData from '@/utils/nut.js'
 
+    import nut1 from '@/assets/images/peanut-coffee-peanut-glutinous-rice-peanuts-53591.jpeg'
+    import nut2 from '@/assets/images/pexels-photo-114121.jpeg'
+
     const router = useRouter();
     const cart = ref(
         [
             {
                 name: '經典可可風味腰果',
                 quantity: 2,
-                price: 10
+                price: 10,
+                img: nut1
             },
             {
                 name: '芥末風味腰果',
                 quantity: 3,
-                price: 20
+                price: 20,
+                img: nut2
             }
         ]
     )
     const localNutsData = ref(nutsData);
     const flavored = ref(null);
     const other = ref(null);
-    const cartModal = ref(null);
+    const closeCartModal = ref(null);
     const purchaseModal = ref(null);
     const closePurchaseModalButton = ref(null);
     const totalPrice = computed(() => cart.value.reduce((acc, product) => acc + product.quantity * product.price, 0));
@@ -40,13 +45,12 @@
 
     const handleAddProduct = (addProduct) => {
 
-        if(cart.value.some(product => {
-            return  product.name === addProduct.name})){
-                cartModal.value.classList.remove('hidden');
-                cartModal.value.classList.remove('fade-out');
+        if(cart.value.some(product => product.name === addProduct.name)) {
+                closeCartModal.value.classList.remove('hidden');
+                closeCartModal.value.classList.remove('fade-out');
 
                 setTimeout(()=> {
-                    cartModal.value.classList.add('fade-out');
+                    closeCartModal.value.classList.add('fade-out');
                 }, 0)
 
             return ;
@@ -55,7 +59,8 @@
         cart.value.push({
             name: addProduct.name,
             quantity: 1,
-            price: addProduct.price
+            price: addProduct.price,
+            img: addProduct.img
         })
     }
     
