@@ -45,7 +45,8 @@ export default
             short: "濃郁可可香氣，甜苦交織，巧克力愛好者首選。"
         },
         price: 10,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 25
     },
     {
         id: 2,
@@ -80,7 +81,8 @@ export default
             short: "微辣芥末香，清新辛辣，提神醒腦的好夥伴。"
         },
         price: 20,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 23
     },
     {
         id: 3,
@@ -114,7 +116,8 @@ export default
             short: "蜂蜜與腰果的甜蜜組合，口感酥脆，天然美味。"
         },
         price: 30,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 16
     },
     {
         id: 4,
@@ -148,7 +151,8 @@ export default
             short: "椰香濃郁，熱帶風情，清爽自然甜味。"
         },
         price: 40,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 16
     },
     {
         id: 5,
@@ -181,7 +185,8 @@ export default
             short: "咖啡奶香交融，濃郁咖啡香，下午茶最佳伴侶。"
         },
         price: 50,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 66
     },
     {
         id: 6,
@@ -215,7 +220,8 @@ export default
             short: "酸辣東央湯風味，帶來濃郁異國香氣。"
         },
         price: 60,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 67
     },
     {
         id: 7,
@@ -250,7 +256,8 @@ export default
             short: "蒜香撲鼻，微辣刺激，重口味的經典零食。"
         },
         price: 70,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 21
     },
     {
         id: 8,
@@ -284,7 +291,8 @@ export default
             short: "起司濃香，奶香迷人，下酒必備零食。"
         },
         price: 80,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 17
     },
     {
         id: 9,
@@ -319,7 +327,8 @@ export default
             short: "檸檬清香，酸甜交錯，夏日清爽的絕佳選擇。"
         },
         price: 90,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 4
     },
     {
         id: 10,
@@ -355,7 +364,8 @@ export default
             short: "鹹蛋黃濃厚，鹹香迷人，無法抗拒的鹹味零食。"
         },
         price: 100,
-        cate: "風味腰果"
+        cate: "風味腰果",
+        inStock: 18
     },
     {
         id: 11,
@@ -389,7 +399,8 @@ export default
             short: "多種健康堅果，手工烘焙，無添加糖分。"
         },
         price: 110,
-        cate: "其他"
+        cate: "其他",
+        inStock: 38
     },
     {
         id: 12,
@@ -421,6 +432,7 @@ export default
             short: "海苔堅果鹹香脆爽，隨時隨地的健康點心。"
         },
         price: 120,
-        cate: "其他"
+        cate: "其他",
+        inStock: 27
     }
 ]
