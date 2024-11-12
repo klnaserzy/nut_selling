@@ -30,7 +30,9 @@
         const confirmDelivery = confirm('是否確定訂購(沒有實際傳送任何資料)')
 
         if(confirmDelivery){
+
             console.log(orderForm.value)
+
             alert(`
                 f12 查看傳送資料
 
