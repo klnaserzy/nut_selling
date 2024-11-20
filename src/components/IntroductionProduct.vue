@@ -39,7 +39,8 @@
         <div class="wrapper" v-for="(nuts, index) in nutsData" :key="index" ref="products">
             <div class="intro-text">
                 <h2>{{ nuts.name }}</h2>
-                <p>{{ nuts.introduction.long }}</p>
+                <p id="long-introduction">{{ nuts.introduction.long }}</p>
+                <p id="short-introduction" class="hidden">{{ nuts.introduction.short }}</p>
             </div>
             <img class="intro-img" :src="nuts.img" :alt="nuts.name + '圖片'">
         </div>
@@ -99,6 +100,76 @@
         margin-right: 50px;
         border-right: 1px solid black;
         object-fit: cover;
+    }
+
+    
+	@media screen and (max-width: 680px) {
+		#long-introduction {
+            display: none;
+        }
+        
+		#short-introduction {
+            display: block;
+        }
+
+        .wrapper {
+            margin: 30px 0;
+        }
+
+        .wrapper .intro-img {
+            height: 120px;
+        }
+
+        .intro-text h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .intro-text #short-introduction {
+            font-size: 1em;
+        }
+
+        .wrapper:nth-child(odd) .intro-img {
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+        
+        .wrapper:nth-child(even) .intro-img {
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+	}
+    
+	@media screen and (max-width: 480px) {
+
+        .wrapper:nth-child(odd) {
+            flex-direction: column;
+        }
+
+        .wrapper:nth-child(even) {
+            flex-direction: column;
+        }
+
+        .intro-text #long-introduction {
+            display: none;
+        }
+
+        .intro-text #short-introduction {
+            display: none;
+        }
+        
+        .wrapper:nth-child(odd) .intro-img {
+            border: none;
+        }
+        
+        .wrapper:nth-child(even) .intro-img {
+            border: none;
+        }
+
+        .wrapper:nth-child(odd) .intro-img {
+            margin: 0;
+            padding: 0;
+        }
     }
 
 </style>
