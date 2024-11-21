@@ -1,10 +1,12 @@
 <script setup>
     import { computed, ref } from 'vue';
     import { useRouter } from 'vue-router';
+
     import Nav from '@/components/Nav.vue';
     import AutoCloseModal from '@/components/AutoCloseModal.vue';
-    import nutsData from '@/utils/nut.js'
+    import Sidebar from '@/components/Sidebar.vue';
 
+    import nutsData from '@/utils/nut.js'
     import nut1 from '@/assets/images/peanut-coffee-peanut-glutinous-rice-peanuts-53591.jpeg'
     import nut2 from '@/assets/images/pexels-photo-114121.jpeg'
 
@@ -26,30 +28,17 @@
         ]
     )
     const modalToggle = ref(true);
-    const localNutsData = ref(nutsData);
-    const flavored = ref(null);
-    const other = ref(null);
-    const closeCartModal = ref(null);
+    const purchaseModalToggle = ref(false);
     const purchaseModal = ref(null);
+    const localNutsData = ref(nutsData);
     const closePurchaseModalButton = ref(null);
     const totalPrice = computed(() => cart.value.reduce((acc, product) => acc + product.quantity * product.price, 0));
-    const localNutsDataFilter = computed(() => {
-
-        if(flavored.value !== other.value) {
-
-            const filterData = (checkedValue) => localNutsData.value.filter(nuts => checkedValue === nuts.cate)
-
-            return flavored.value ? filterData('風味腰果') : filterData('其他')
-        }
-
-        return localNutsData.value;
-    })
-
+    const localNutsDataFilter = ref(localNutsData.value);
+    
     const handleAddProduct = (addProduct) => {
 
         if(cart.value.some(product => product.name === addProduct.name)) {
-                modalToggle.value = !modalToggle.value;
-
+            modalToggle.value = !modalToggle.value;
             return ;
         }
 
@@ -61,28 +50,14 @@
         })
     }
     
-    const handleQuantityInput = (e, cartList) => {
-        const quantity = e.target.value;
-
-        if(quantity > 0) {
-            cart.value.map(product => {
-                if(product.name === cartList.name)
-                    product.quantity = quantity;
-            })
+    const handleTogglePurchaseModal = (e, toggle) => {
+        if(toggle){
+            purchaseModalToggle.value = true;
         }
         else {
-            cart.value.map(product => {
-                if(product.name === cartList.name)
-                    product.quantity = 0;
-            })
+            if(e.target === purchaseModal.value || e.target === closePurchaseModalButton.value)
+            purchaseModalToggle.value = false;
         }
-    }
-
-    const handleShowPurchaseModal = () => purchaseModal.value.classList.remove('hidden');
-
-    const handleClosePurchaseModal = (e) => {
-        if(e.target === purchaseModal.value || e.target === closePurchaseModalButton.value)
-            purchaseModal.value.classList.add('hidden');
     }
 
     const handleConfirmationPurchase = () => {
@@ -98,7 +73,7 @@
 	<div class="main-layout">
 		<Nav />
         <AutoCloseModal :modalToggle="modalToggle">已加入到購物車</AutoCloseModal>
-        <div @click="(e) => handleClosePurchaseModal(e)" ref="purchaseModal" class="purchase-modal hidden">
+        <div @click="(e) => handleTogglePurchaseModal(e)" v-if="purchaseModalToggle" ref="purchaseModal" class="purchase-modal">
             <div class="purchase-wrapper">
                 <div class="check-list">
                     <h2>購買清單</h2>
@@ -121,47 +96,19 @@
                         <p class="products-total-price">總金額: {{ totalPrice }}</p>
                         <div class="check-cancel-button">
                             <button @click="handleConfirmationPurchase" class="check">確認購買</button>
-                            <button @click="(e) => handleClosePurchaseModal(e)" ref="closePurchaseModalButton" class="cancel">取消</button>
+                            <button @click="(e) => handleTogglePurchaseModal(e)" ref="closePurchaseModalButton" class="cancel">取消</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="products-section">
-            <div class="product-sidebar">
-                <div class="category-nav">
-                    <ul>
-                        <li>
-                            <input v-model='flavored' id="flavored cashew nuts" type="checkbox" name="cate"/>
-                            <label for="flavored cashew nuts"> 風味腰果 [10]</label>
-                        </li>
-                        <li>
-                            <input v-model='other' id="other" type="checkbox" name="cate"/>
-                            <label for="other"> 其他 [2]</label>
-                        </li>
-                    </ul>
-                </div>
-                <hr />
-                <div class="cart-preview">
-                    <div class="cart">
-                        <ul>
-                            <li v-for="(cartList, index) in cart" :key="index">
-                                <p>{{ cartList.name }}</p>
-                                <div class="purchase-quantity">
-                                    <button @click="cartList.quantity > 0 ? --cartList.quantity : null">-</button>
-                                    <input @input="(e) => handleQuantityInput(e, cartList)" type="number" :value='cartList.quantity'/>
-                                    <button @click="++cartList.quantity">+</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <hr />
-                    <div class="total-price">
-                        <p>總金額: {{ totalPrice }}元</p>
-                    </div>
-                    <button @click="handleShowPurchaseModal" id="purchase-button">確認購買</button>
-                </div>
-            </div>
+            <Sidebar 
+                v-model:localNutsDataFilter="localNutsDataFilter" 
+                :cart="cart" :totalPrice="totalPrice" 
+                :purchaseModal="purchaseModal"
+                @showPurchaseModal="(toggle) => handleTogglePurchaseModal(e, toggle)"
+            ></Sidebar>
             <div class="product-list">
                 <div class="product" v-for="(nut, index) in localNutsDataFilter" :key="index">
                     <img :src="nut.img" :alt="nut.name + '圖片'">
@@ -281,64 +228,12 @@
         margin: 8px 0;
     }
     
-    .cart li {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-    }
-
-    .cart li input[type='number']{
-        width: 30px;
-        height: 100%;
-        text-align: center;
-    }
-
-    #purchase-button {
-        display: block;
-        width: 80%;
-        margin: auto;
-        border: none;
-        background-color: #ca956f;
-        color: white;
-        height: 30px;
-        border-radius: 5px;
-        margin-top: 10px;
-        font-size: 1em;
-    }
-
-    #purchase-button:hover {
-        background-color: #c58456;
-    }
-
-    hr {
-        margin: 10px 0;
-    }
-    
-    input[type=number]::-webkit-inner-spin-button, 
-    input[type=number]::-webkit-outer-spin-button { 
-        -webkit-appearance: none;
-        margin: 0; 
-    }
-
-    .cart li button{
-        width: 15px;
-        background-color: transparent;
-        border: 1px solid hsl(0, 0%, 30%);
-        height: 100%;
-    }
-
     .products-section {
         width: 85%;
+        min-height: 80vh;
         margin: 50px auto;
         display: flex;
         justify-content: space-between;
-    }
-
-    .product-sidebar {
-        position: sticky;
-        top: 140px;
-        width: 20%;
-        height: 100px;
     }
 
     .product-list {

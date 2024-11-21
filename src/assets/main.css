@@ -27,6 +27,26 @@ button:hover {
     opacity: 1;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f148;
+    border-radius: 8px;
+    margin: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #dadce0;
+    border: 4px solid transparent;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(177, 177, 177)
+}
+
 @keyframes fadeIn {
     to {
         opacity: 1;
