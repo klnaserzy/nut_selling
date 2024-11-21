@@ -157,18 +157,20 @@
         .intro-text #short-introduction {
             display: none;
         }
-        
-        .wrapper:nth-child(odd) .intro-img {
-            border: none;
-        }
-        
-        .wrapper:nth-child(even) .intro-img {
-            border: none;
+
+        .wrapper {
+            text-align: center;
         }
 
         .wrapper:nth-child(odd) .intro-img {
-            margin: 0;
+            border: none;
+            margin: auto;
             padding: 0;
+        }
+        
+        .wrapper:nth-child(even) .intro-img {
+            margin: auto;
+            border: none;
         }
     }
 
