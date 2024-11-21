@@ -38,7 +38,6 @@
     const handleClickPurchase = () => emit('showPurchaseModal', true);
 
     watch(() => localNutsDataFilter.value, () => {
-        console.log(localNutsDataFilter.value)
         emit('update:localNutsDataFilter', localNutsDataFilter.value)
     })
 
