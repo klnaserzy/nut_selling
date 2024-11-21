@@ -2,6 +2,7 @@
     import { computed, ref } from 'vue';
     import { useRouter } from 'vue-router';
     import Nav from '@/components/Nav.vue';
+    import AutoCloseModal from '@/components/AutoCloseModal.vue';
     import nutsData from '@/utils/nut.js'
 
     import nut1 from '@/assets/images/peanut-coffee-peanut-glutinous-rice-peanuts-53591.jpeg'
@@ -24,6 +25,7 @@
             }
         ]
     )
+    const modalToggle = ref(true);
     const localNutsData = ref(nutsData);
     const flavored = ref(null);
     const other = ref(null);
@@ -46,12 +48,7 @@
     const handleAddProduct = (addProduct) => {
 
         if(cart.value.some(product => product.name === addProduct.name)) {
-                closeCartModal.value.classList.remove('hidden');
-                closeCartModal.value.classList.remove('fade-out');
-
-                setTimeout(()=> {
-                    closeCartModal.value.classList.add('fade-out');
-                }, 0)
+                modalToggle.value = !modalToggle.value;
 
             return ;
         }
@@ -100,11 +97,7 @@
 <template>
 	<div class="main-layout">
 		<Nav />
-        <div ref="closeCartModal" class="cart-modal hidden">
-            <div class="cart-modal-wrapper">
-                <p>已加入到購物車</p>
-            </div>
-        </div>
+        <AutoCloseModal :modalToggle="modalToggle">已加入到購物車</AutoCloseModal>
         <div @click="(e) => handleClosePurchaseModal(e)" ref="purchaseModal" class="purchase-modal hidden">
             <div class="purchase-wrapper">
                 <div class="check-list">
