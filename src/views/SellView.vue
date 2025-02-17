@@ -2,82 +2,91 @@
     import { computed, ref } from 'vue';
     import { useRouter } from 'vue-router';
 
-    import Nav from '@/components/Nav.vue';
+    import Nav from '@/components/Nav.vue'; 
     import AutoCloseModal from '@/components/AutoCloseModal.vue';
-    import Sidebar from '@/components/Sidebar.vue';
+    import ShoppingCartSideBar from '@/components/ShoppingCartSideBar.vue';
 
-    import nutsData from '@/utils/nut.js'
-    import nut1 from '@/assets/images/peanut-coffee-peanut-glutinous-rice-peanuts-53591.jpeg'
-    import nut2 from '@/assets/images/pexels-photo-114121.jpeg'
-
-    const router = useRouter();
-    const cart = ref(
-        [
-            {
-                name: '經典可可風味腰果',
-                quantity: 2,
-                price: 10,
-                img: nut1
-            },
-            {
-                name: '芥末風味腰果',
-                quantity: 3,
-                price: 20,
-                img: nut2
-            }
-        ]
-    )
-    const modalToggle = ref(true);
-    const purchaseModalToggle = ref(false);
-    const purchaseModal = ref(null);
-    const localNutsData = ref(nutsData);
-    const closePurchaseModalButton = ref(null);
-    const totalPrice = computed(() => cart.value.reduce((acc, product) => acc + product.quantity * product.price, 0));
-    const localNutsDataFilter = ref(localNutsData.value);
+    import nutsData from '@/utils/nut.js';
     
-    const handleAddProduct = (addProduct) => {
+    const router = useRouter();  // 獲取路由對象，用於導航到其他頁面
 
-        if(cart.value.some(product => product.name === addProduct.name)) {
+    // 購物車的初始化數據
+    const cart = ref([]);
+
+    // 模態框的顯示狀態
+    const modalToggle = ref(true); // 加入購物車提示的顯示狀態
+    const purchaseModalToggle = ref(false); // 購買清單模態框的顯示狀態
+    const purchaseModal = ref(null); // 購買模態框的 DOM 引用
+    const closePurchaseModalButton = ref(null); // 關閉購買模態框按鈕的 DOM 引用
+
+    // 本地堅果數據，用於顯示在商品列表中
+    const localNutsData = ref(nutsData);
+    const localNutsDataFilter = ref(localNutsData.value); // 用於篩選的堅果數據
+
+    // 計算總金額
+    const totalPrice = computed(() => 
+        cart.value.reduce((acc, product) => acc + product.quantity * product.price, 0)
+    );
+
+    // 計算總重量
+    const totalWeight = computed(() => 
+        cart.value.reduce((acc, product) => acc + product.quantity * product.weight, 0)
+    );
+
+    // 處理加入購物車的邏輯
+    const handleAddProduct = (addProduct) => {
+        // 如果商品已存在於購物車，顯示提示模態框
+        if (cart.value.some(product => product.name === addProduct.name)) {
             modalToggle.value = !modalToggle.value;
-            return ;
+            return;
         }
 
+        // 如果商品不存在於購物車，將商品添加到購物車
         cart.value.push({
             name: addProduct.name,
-            quantity: 1,
+            quantity: 1, // 初始購買數量為 1
             price: addProduct.price,
-            img: addProduct.img
-        })
-    }
-    
-    const handleTogglePurchaseModal = (e, toggle) => {
-        if(toggle){
-            purchaseModalToggle.value = true;
-        }
-        else {
-            if(e.target === purchaseModal.value || e.target === closePurchaseModalButton.value)
-            purchaseModalToggle.value = false;
-        }
-    }
+            img: addProduct.img,
+            weight: addProduct.weight
+        });
+    };
 
+    // 控制購買模態框的顯示/隱藏
+    const handleTogglePurchaseModal = (e, toggle) => {
+        if (toggle) {
+            purchaseModalToggle.value = true; // 打開模態框
+        } else {
+            // 如果點擊的是模態框本身或關閉按鈕，隱藏模態框
+            if (e.target === purchaseModal.value || e.target === closePurchaseModalButton.value)
+                purchaseModalToggle.value = false;
+        }
+    };
+
+    // 處理確認購買的邏輯
     const handleConfirmationPurchase = () => {
+        // 導航到 OrderConfirmation 頁面，並通過查詢參數傳遞購物車數據
         router.push({
             name: 'OrderConfirmation',
-            query: { cart: JSON.stringify(cart.value)}
-        })
-    }
-
+            query: { cart: JSON.stringify(cart.value) }
+        });
+    };
 </script>
 
 <template>
 	<div class="main-layout">
+		<!-- 頂部導航 -->
 		<Nav />
+
+        <!-- 自動關閉的模態框，顯示加入購物車的提示 -->
         <AutoCloseModal :modalToggle="modalToggle">已加入到購物車</AutoCloseModal>
+
+        <!-- 購買清單模態框 -->
         <div @click="(e) => handleTogglePurchaseModal(e)" v-if="purchaseModalToggle" ref="purchaseModal" class="purchase-modal">
             <div class="purchase-wrapper">
                 <div class="check-list">
                     <h2>購買清單</h2>
                     <div class="display-list">
+                        <!-- 商品清單 -->
                         <ul>
                             <li>
                                 <p class="product-name">名稱</p>
@@ -94,6 +103,8 @@
                         </ul>
                         <hr />
                         <p class="products-total-price">總金額: {{ totalPrice }}</p>
+                        <p class="products-total-weight">總重量: {{ totalWeight / 1000 }}kg</p>
+                        <!-- 確認或取消按鈕 -->
                         <div class="check-cancel-button">
                             <button @click="handleConfirmationPurchase" class="check">確認購買</button>
                             <button @click="(e) => handleTogglePurchaseModal(e)" ref="closePurchaseModalButton" class="cancel">取消</button>
@@ -102,13 +113,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- 商品展示區域 -->
         <div class="products-section">
-            <Sidebar 
+            <!-- 側邊欄，用於篩選商品 -->
+            <ShoppingCartSideBar 
                 v-model:localNutsDataFilter="localNutsDataFilter" 
-                :cart="cart" :totalPrice="totalPrice" 
+                :cart="cart" 
+                :totalPrice="totalPrice" 
                 :purchaseModal="purchaseModal"
                 @showPurchaseModal="(toggle) => handleTogglePurchaseModal(e, toggle)"
-            ></Sidebar>
+            ></ShoppingCartSideBar>
+
+            <!-- 商品列表 -->
             <div class="product-list">
                 <div class="product" v-for="(nut, index) in localNutsDataFilter" :key="index">
                     <img :src="nut.img" :alt="nut.name + '圖片'">
@@ -122,6 +139,7 @@
         </div>
 	</div>
 </template>
+
 
 <style scoped>
     .main-layout {
@@ -207,6 +225,12 @@
     }
 
     .display-list .products-total-price {
+        text-align: right;
+        padding-right: 5px;
+        font-size: 1.4em;
+    }
+
+    .display-list .products-total-weight {
         text-align: right;
         padding-right: 5px;
         font-size: 1.4em;

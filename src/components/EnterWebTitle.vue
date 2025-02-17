@@ -1,7 +1,5 @@
 <script setup>
 
-
-
 </script>
 
 <template>
@@ -62,8 +60,8 @@
         grid-column-end: 4;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* 垂直置中 */
-        align-items: center; /* 水平置中 */
+        justify-content: center;
+        align-items: center;
         text-align: center;
         gap: 20px;
         animation-delay: 0.5s;

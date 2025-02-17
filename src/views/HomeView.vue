@@ -2,6 +2,7 @@
 	import EnterWebTitle from '@/components/EnterWebTitle.vue';
 	import Nav from '@/components/Nav.vue';
 	import IntroductionProduct from '@/components/IntroductionProduct.vue';
+	import Footer from '@/components/Footer.vue';
 </script>
 
 <template>
@@ -9,7 +10,9 @@
 		<Nav />
 		<EnterWebTitle />
 		<IntroductionProduct />
-		<footer></footer>
+		<footer>
+			<Footer></Footer>
+		</footer>
 	</div>
 </template>
 

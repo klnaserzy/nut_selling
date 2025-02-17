@@ -8,10 +8,8 @@
     const handleIntersect = (entries) => {
         entries.forEach(entry => {
             entry.isIntersecting ?
-                // 當元素進入視窗時觸發
-                entry.target.classList.add('visible') :
-                // 當元素離開視窗時觸發
-                entry.target.classList.remove('visible');
+                entry.target.classList.add('visible') :  // 當元素進入視窗時觸發
+                entry.target.classList.remove('visible');  // 當元素離開視窗時觸發
         })
     }
 

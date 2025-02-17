@@ -1,11 +1,18 @@
 <script setup>
     import { onMounted, ref, computed } from 'vue';
     import { useRoute } from 'vue-router';
-    import Nav from '@/components/Nav.vue';
+    import Nav from '@/components/Nav.vue'; // 導航組件
 
+    // 使用 Vue Router 獲取當前路由
     const route = useRoute();
-    const cart = ref([])
+
+    // 定義購物車數據（使用 ref 以便響應式更新）
+    const cart = ref([]);
+
+    // 計算總金額：遍歷購物車，計算每項產品的總價格（單價 * 數量）
     const totalPrice = computed(() => cart.value.reduce((acc, product) => acc + product.quantity * product.price, 0));
+
+    // 定義訂單表單的初始值，包含個人、配送及付款相關信息
     const orderForm = ref({
         name: '',
         phone: '',
@@ -18,21 +25,24 @@
         'expiry-data': '',
         cvv: '',
         invoice: ''
-    })
+    });
 
+    // 在組件掛載時從路由參數中加載購物車數據
     onMounted(() => {
-        if(route.query.cart)
-            cart.value = JSON.parse(route.query.cart)
- 
-    })
+        if (route.query.cart)
+            cart.value = JSON.parse(route.query.cart); // 將 JSON 格式的購物車數據轉換為 JavaScript 對象
+    });
 
+    // 處理提交訂單表單的邏輯
     const handleSubmitPurchaseInfo = () => {
-        const confirmDelivery = confirm('是否確定訂購(沒有實際傳送任何資料)')
+        // 提示確認訂單信息
+        const confirmDelivery = confirm('是否確定訂購(沒有實際傳送任何資料)');
 
-        if(confirmDelivery){
+        if (confirmDelivery) {
+            // 將訂單表單數據打印到控制台
+            console.log(orderForm.value);
 
-            console.log(orderForm.value)
-
+            // 顯示模擬的 `fetch` 請求代碼
             alert(`
                 f12 查看傳送資料
 
@@ -42,40 +52,46 @@
                     body: JSON.stringify(orderForm.value)
                 })
                     .then(response => {
-                        if(!response.ok) throw new Error(response.statusText)
-                        response.json()
+                        if(!response.ok) throw new Error(response.statusText);
+                        response.json();
                     })
                     .then(data => {
-                        console.log('回應資料', data)
+                        console.log('回應資料', data);
                     })
-                    .catch(error => console.log('錯誤: ', error))
+                    .catch(error => console.log('錯誤: ', error));
                     
                     `
-            )
+            );
         }
-    }
-
+    };
 </script>
 
 <template>
     <div class="main-layout">
+        <!-- 導航區域 -->
         <Nav></Nav>
+        
         <div class="trading-area">
+            <!-- 購物車產品區域 -->
             <div class="products">
                 <ul>
+                    <!-- 遍歷購物車中的每個產品，顯示產品信息 -->
                     <li v-for="(product, index) in cart" :key="index">
-                        <img :src="product.img" :alt="product.name" />
+                        <img :src="product.img" :alt="product.name" /> <!-- 產品圖片 -->
                         <div class="product-info">
-                            <h2 class="name">{{ product.name }}</h2>
-                            <h3 class="per-price">單份價格：{{ product.price }}</h3>
-                            <h3 class="quantity">購買數量：{{ product.quantity }}</h3>
+                            <h2 class="name">{{ product.name }}</h2> <!-- 產品名稱 -->
+                            <h3 class="per-price">單份價格：{{ product.price }}</h3> <!-- 單份價格 -->
+                            <h3 class="quantity">購買數量：{{ product.quantity }}</h3> <!-- 購買數量 -->
                         </div>
                     </li>
                 </ul>
-                <h2 class="total-price">總金額：{{ totalPrice }}</h2>
+                <h2 class="total-price">總金額：{{ totalPrice }}</h2> <!-- 顯示總金額 -->
             </div>
+
+            <!-- 填寫表單區域 -->
             <div class="fill-out-form">
-                <form @submit.prevent="handleSubmitPurchaseInfo">
+                <form @submit.prevent="handleSubmitPurchaseInfo"> <!-- 提交表單時觸發事件 -->
+                    <!-- 個人基本資訊 -->
                     <div id="personal-area">
                         <p>個人基本資訊</p>
                         <div>
@@ -84,7 +100,7 @@
                         </div>
                         <div>
                             <label for="phone">聯絡電話:</label>
-                            <input type="tel" id="phone" name="phone"  pattern="[0-9]{10}" v-model="orderForm.phone">
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" v-model="orderForm.phone">
                         </div>
                         <div>
                             <label for="email">電子郵件:</label>
@@ -92,6 +108,7 @@
                         </div>
                     </div>
 
+                    <!-- 配送資訊 -->
                     <div id="deliver-area">
                         <p>配送資訊</p>
                         <div>
@@ -102,8 +119,6 @@
                             <label for="zipcode">郵遞區號:</label>
                             <input type="text" id="zipcode" name="zipcode" v-model="orderForm.zipcode">
                         </div>
-
-
                         <label for="delivery-method">配送方式:</label>
                         <select id="delivery-method" name="delivery-method" v-model="orderForm['delivery-method']">
                             <option value="standard">標準配送</option>
@@ -112,9 +127,9 @@
                         </select>
                     </div>
                 
+                    <!-- 付款資訊 -->
                     <div id="payment-area">
                         <p>付款資訊</p>
-                        
                         <label for="payment-method">付款方式:</label>
                         <select id="payment-method" name="payment-method" v-model="orderForm['payment-method']">
                             <option value="credit-card">信用卡</option>
@@ -122,6 +137,7 @@
                             <option value="mobile-pay">行動支付</option>
                         </select>
 
+                        <!-- 信用卡相關資訊 -->
                         <div id="credit-card-info" class="payment-info">
                             <div>
                                 <label for="card-number">信用卡號:</label>
@@ -136,6 +152,7 @@
                         </div>
                     </div>
 
+                    <!-- 訂單備註 -->
                     <div id="order-note">
                         <p>訂單備註</p>
                         <div>
