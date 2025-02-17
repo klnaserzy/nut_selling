@@ -18,6 +18,7 @@
     const purchaseModalToggle = ref(false); // 購買清單模態框的顯示狀態
     const purchaseModal = ref(null); // 購買模態框的 DOM 引用
     const closePurchaseModalButton = ref(null); // 關閉購買模態框按鈕的 DOM 引用
+    const notShoppingModal = ref(false); // 於購買畫面點擊確認 若未購買任何物品觸發模態框
 
     // 本地堅果數據，用於顯示在商品列表中
     const localNutsData = ref(nutsData);
@@ -64,6 +65,11 @@
 
     // 處理確認購買的邏輯
     const handleConfirmationPurchase = () => {
+        if (totalPrice.value === 0) {
+            notShoppingModal.value = !notShoppingModal.value;
+            return ;
+        }
+
         // 導航到 OrderConfirmation 頁面，並通過查詢參數傳遞購物車數據
         router.push({
             name: 'OrderConfirmation',
@@ -78,7 +84,9 @@
 		<Nav />
 
         <!-- 自動關閉的模態框，顯示加入購物車的提示 -->
-        <AutoCloseModal :modalToggle="modalToggle">已加入到購物車</AutoCloseModal>
+        <AutoCloseModal class="topModal" :modalToggle="modalToggle">已加入到購物車</AutoCloseModal>
+        <!-- 自動關閉的模態框，顯示未購買任何商品的提示 -->
+        <AutoCloseModal class="topModal" :modalToggle="notShoppingModal">未添購任何商品</AutoCloseModal>
 
         <!-- 購買清單模態框 -->
         <div @click="(e) => handleTogglePurchaseModal(e)" v-if="purchaseModalToggle" ref="purchaseModal" class="purchase-modal">
@@ -105,7 +113,7 @@
                         <p class="products-total-price">總金額: {{ totalPrice }}</p>
                         <p class="products-total-weight">總重量: {{ totalWeight / 1000 }}kg</p>
                         <!-- 確認或取消按鈕 -->
-                        <div class="check-cancel-button">
+                        <div class="check-cancel-button">   
                             <button @click="handleConfirmationPurchase" class="check">確認購買</button>
                             <button @click="(e) => handleTogglePurchaseModal(e)" ref="closePurchaseModalButton" class="cancel">取消</button>
                         </div>
@@ -120,7 +128,8 @@
             <ShoppingCartSideBar 
                 v-model:localNutsDataFilter="localNutsDataFilter" 
                 :cart="cart" 
-                :totalPrice="totalPrice" 
+                :totalPrice="totalPrice"
+                :totalWeight="totalWeight" 
                 :purchaseModal="purchaseModal"
                 @showPurchaseModal="(toggle) => handleTogglePurchaseModal(e, toggle)"
             ></ShoppingCartSideBar>
@@ -132,6 +141,10 @@
                     <div class="describe">
                         <h3>{{ nut.name }}</h3>
                         <p>{{ nut.introduction.short }}</p>
+                        <div class="priceWeight">
+                            <span><p>{{ nut.price }}元</p></span>
+                            <span><p>{{ nut.weight }}g</p></span>
+                        </div>
                         <button @click="() => handleAddProduct(nut)">加入購物車</button>
                     </div>
                 </div>
@@ -144,6 +157,11 @@
 <style scoped>
     .main-layout {
         position: relative;
+    }
+
+    .topModal {
+        position: fixed;
+        z-index: 9999;
     }
 
     .cart-modal {
@@ -269,17 +287,20 @@
 
     .product {
         width: 100%;
-        height: 280px;
+        height: 340px;
         background: linear-gradient(135deg, rgb(247, 244, 238), rgb(215, 196, 158));
         box-shadow: 5px 5px 10px hsl(0, 0%, 50%);
         border-radius: 15px;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
     .product img {
         width: 100%;
         height: 60%;
         object-fit: cover;
+        margin-bottom: 10px;
     }
 
     .product h3 {
@@ -292,9 +313,15 @@
         font-size: 0.9em;
     }
 
+    .priceWeight {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .product button {
         display: block;
         margin: auto;
+        margin-bottom: 10px;
         border: none;
         background-color: #ca956f;
         padding: 7px 20px;

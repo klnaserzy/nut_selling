@@ -17,7 +17,7 @@ export default
 [
     {
         id: 1,
-        name: "芥末風味腰果 包 30g",
+        name: "芥末風味腰果 包",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -53,7 +53,7 @@ export default
     },
     {
         id: 2,
-        name: "芥末風味腰果 罐 150g",
+        name: "芥末風味腰果 罐",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -89,7 +89,7 @@ export default
     },
     {
         id: 3,
-        name: "起司鹹蛋風味腰果 包 30g",
+        name: "起司鹹蛋風味腰果 包",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -126,7 +126,7 @@ export default
     },
     {
         id: 4,
-        name: "起司鹹蛋風味腰果 罐 150g",
+        name: "起司鹹蛋風味腰果 罐",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -163,7 +163,7 @@ export default
     },
     {
         id: 5,
-        name: "泰式東央風味腰果 包 30g",
+        name: "泰式東央風味腰果 包",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -198,7 +198,7 @@ export default
     },
     {
         id: 6,
-        name: "泰式東央風味腰果 罐 150g",
+        name: "泰式東央風味腰果 罐",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -233,7 +233,7 @@ export default
     },
     {
         id: 7,
-        name: "蒜辣風味腰果 包 30g",
+        name: "蒜辣風味腰果 包",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -269,7 +269,7 @@ export default
     },
     {
         id: 8,
-        name: "蒜辣風味腰果 罐 150g",
+        name: "蒜辣風味腰果 罐",
         origin: "越南",
         ingredient: [
             "腰果",
@@ -340,7 +340,7 @@ export default
     },
     {
         id: 10,
-        name: "健康海苔堅果餅 大包 250g",
+        name: "健康海苔堅果餅 大包",
         origin: "越南",
         ingredient: [
             "南瓜子",
@@ -373,7 +373,7 @@ export default
     },
     {
         id: 11,
-        name: "健康海苔堅果餅 小包 120g",
+        name: "健康海苔堅果餅 小包",
         origin: "越南",
         ingredient: [
             "南瓜子",

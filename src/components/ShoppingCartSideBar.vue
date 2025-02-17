@@ -5,6 +5,7 @@
     const props = defineProps({
         cart: Object,
         totalPrice: Number,
+        totalWeight: Number,
         localNutsDataFilter: Array
     })
     const emit = defineEmits(['update:localNutsDataFilter', 'showPurchaseModal'])
@@ -94,7 +95,7 @@
             <!-- 總金額與重量顯示 -->
             <div class="total-info">
                 <p>總金額: {{ props.totalPrice }}元</p>
-                <p>總重量: {{ props.totalPrice / 1000 }}kg</p>
+                <p>總重量: {{ props.totalWeight / 1000 }}kg</p>
             </div>
             <!-- 確認購買按鈕 -->
             <button @click="handleClickPurchase" id="purchase-button">確認購買</button>
